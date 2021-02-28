@@ -10,7 +10,6 @@ function App() {
    <>
     {/* Sidebar */}
     <Sidebar />
-    <div>OI</div>
     {/* Feed */}
     {/* Widgets */}
     <GlobalStyle />

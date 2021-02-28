@@ -11,7 +11,10 @@ export default createGlobalStyle`
     min-height: 100%;
   }
   body{
-    background: #fff;
+    --twitter-color: #50b7f5;
+    --twitter-background: #e6ecf0;
+
+
     -webkit-font-smooting: antialiased;
   }
   body, input, button{
