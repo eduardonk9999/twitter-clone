@@ -6,6 +6,10 @@ export const Container = styled.div`
   /* min-width: fit-content; */
   overflow-y: scroll;
 
+  @media(max-width: 1020px){
+    flex: auto;
+  }
+
   &::-webkit-scrollbar {
     display: none;
   }

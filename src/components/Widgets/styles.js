@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   flex: 0.3;
+  @media(max-width: 1020px){
+    display: none;
+  }
 
   .widgets__input{
     display: flex;

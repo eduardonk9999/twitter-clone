@@ -2,18 +2,23 @@ import React, { useState, useEffect } from 'react'
 
 import { Container } from './style';
 
-import TweetBox from '../TweetBox'
-import Post from '../Post'
+import TweetBox from '../TweetBox';
+import Post from '../Post';
+import api from '../../services/api';
 
-import db from '../../firebase';
+
 
 export default function Feed() {
-  const [ posts, setPosts] = useState([])
+  const [users, setUsers] = useState([])
+  async function handlePosts() {
+    const response = await api.get(`v1/playlists`)
+    const postsapi = response.data;
+    setUsers([postsapi])
+  }
 
   useEffect(() => {
-    db.collection('posts').onSnapshot(snapashot => (
-      setPosts(snapashot.docs.map(doc => doc.data()))
-    ))
+    handlePosts()
+
   }, [])
 
   return (
@@ -24,22 +29,20 @@ export default function Feed() {
 
       <TweetBox />
 
-      <Post
-        displayName="Rex"
-        username="rerfortnite"
-        verified={true}
-        text="play one"
-        avatar="https://media.fortniteapi.io/images/cb39786-435451c-959b162-7bc6089/transparent.png"
-        image="https://i.pinimg.com/originals/58/e1/2d/58e12df5353498eec2ef5f47afca6c08.gif"
-      />
-
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-
+      {
+        users.map(user => (
+          user.data.map(usr => (
+            <Post
+              displayName={usr.name}
+              username={usr.subName}
+              verified={true}
+              text={usr.description}
+              avatar="https://i.pinimg.com/originals/1d/5e/8d/1d5e8d8c8a2c983dfcaa6df18607dba7.png"
+              image={usr.images.showcase}
+            />
+          ))
+        ))
+      }
 
     </Container>
   )
