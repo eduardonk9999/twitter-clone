@@ -1,19 +1,23 @@
 import React from 'react';
 
 import Sidebar from './components/Sidebar';
+import Feed from './components/Feed';
+import Widgets from './components/Widgets';
 
 import GlobalStyle from './styles/global';
 
 
 function App() {
   return (
-   <>
-    {/* Sidebar */}
-    <Sidebar />
-    {/* Feed */}
-    {/* Widgets */}
-    <GlobalStyle />
-   </>
+    <div className="app">
+      <Sidebar />
+      {/* Feed */}
+      <Feed />
+      {/* Widgets */}
+      <Widgets />
+      <GlobalStyle />
+
+    </div>
   );
 }
 

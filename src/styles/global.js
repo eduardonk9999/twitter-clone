@@ -26,4 +26,12 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
+  .app{
+    display: flex;
+    height: 100vh;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
 `;
