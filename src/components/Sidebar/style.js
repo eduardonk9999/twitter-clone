@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   border-right: 1px solid var(--twitter-background);
   flex: 0.3;
-  min-width: 250px;
+  max-width: 250px;
   margin-top: 20px;
   padding: 0 20px;
 
