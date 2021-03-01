@@ -5,7 +5,10 @@ import { Container } from './styles';
 export default function Widgets() {
   return (
     <Container>
-      <h2>Widgets</h2>
+      <div className="widgets__input">
+        <SearchIcon className="widgets__searchIcon" />
+        <input placeholder="Search Twitter" type="text"/>
+      </div>
     </Container>
   )
 }
